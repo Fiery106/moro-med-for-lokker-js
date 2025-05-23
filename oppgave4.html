@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Barne-regle med for løkker
+        </title>
+    </head>
+
+
+
+    <body>
+        <header>
+            <h1>
+                Skriver ut den barne-reglen med de grønne flaskene
+            </h1>
+        </header>
+
+
+        <main>
+            <label>
+                Antall ganger barne-reglen gjentas
+            </label>
+            <input type="number" id="amount" />
+
+            <button onclick="writePoem()">
+                Skriv ut
+            </button>
+        </main>
+
+
+        <footer>
+            <p id="output"></p>
+        </footer>
+
+
+        <script>
+            let output = document.getElementById("output");
+            let amount = Number(document.getElementById("amount").value);
+
+
+            function writePoem() {
+                let multi = "s"
+                let verse1 = "", verse2= "", verse3 = "";
+
+                if (amount) {
+                    if (amount > 0) {
+                        for (i = 0; i < amount; i++) {
+                            if (amount - i - 1 == 1) {
+                                multi = ""
+                            }
+                            verse1 = `${amount - i} green bottle${multi}, hanging on a wall, <br>`
+                            verse2 = "If 1 green bottle were to accidentally fall <br>"
+                            verse3 = `There'd be ${amount - i - 1} green bottle${multi}, hanging on the wall <br>`
+
+                            output.innerHTML += verse1 + verse1 + verse2 + verse3; 
+                        }
+                    } else {
+                        output.innerText = "Ugyldig tall!"
+                    }
+                } else {
+                    output.innerText = "Ugyldig tall!"
+                }
+            }
+        </script>
+    </body>
+</html>
