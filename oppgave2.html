@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Gangetabell små
+        </title>
+
+
+        <style>
+            td {
+                margin: 10px;
+                padding: 10px;
+                text-align: center;
+                border: 2px solid gray;
+            }
+        </style>
+    </head>
+
+
+
+    <body>
+        <header>
+            <h1>
+                Skriver ut en liten gangetabell fra 1-10 + en stor en fra 11-19
+            </h1>
+        </header>
+
+
+        <main>
+            <button onclick="makeTable()">
+                Skriv ut
+            </button>
+        </main>
+
+
+        <footer>
+            <p id="output"></p>
+            <p id="output2"></p>
+        </footer>
+
+
+        <script>
+            let output = document.getElementById("output");
+            let output2 = document.getElementById("output2");
+
+            let table_size = 10;
+
+            function makeTable() {
+                let i = 1;
+                let small = "";
+                let big = "";
+
+                while (i < table_size + 1) { //liten tabell fra 1-10
+                    small += "<tr>"
+                    for (let j = 1; j < table_size + 1; j++) {
+                        small += `<td> ${j * i} </td>`
+                    }
+                    small += "</tr>"
+                    i++
+                }
+
+                i = 10
+                while (i < (table_size * 2)) { //stor tabell fra 10-19
+                    //big += `<td> ${j + i - 1} </td> kjøres bare en gang
+
+                    big += "<tr>"
+                    for (let j = 1; j < (table_size + 1); j++) {
+                        big += `<td> ${j * i} </td>`
+                    }
+                    big += "</tr>"
+                    i++
+                } 
+
+
+                output.innerHTML = "Liten tabell <table>" + small + "</table> <br>"
+                output2.innerHTML = "Stor tabell <table>" + big + "</table>"
+            }
+        </script>
+    </body>
+</html>
