@@ -37,6 +37,9 @@
                 let num = Number(document.getElementById("num").value);
 
                 if (num && num > 1) {
+                    if (num == 2) {
+                        output.innerText = `Tallet ${num} er et primetall`
+                    }
                     for (i = 2; i < num; i++) {
                         if (num % i == 0) {
                             output.innerText = `Tallet ${num} er ikke et primetall`
