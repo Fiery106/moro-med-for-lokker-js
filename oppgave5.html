@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Primtall sjekker
+        </title>
+    </head>
+
+
+
+    <body>
+        <header>
+            <h1>
+                Skriv inn et tall for å se om det er et primtall eller ikke
+            </h1>
+        </header>
+
+
+        <main>
+            <input type="number" id="num" />
+
+            <button onclick="primeNum()">
+                Send
+            </button>
+        </main>
+
+
+        <footer>
+            <p id="output"></p>
+        </footer>
+
+
+        <script>
+            let output = document.getElementById("output");
+
+            function primeNum() {
+                let num = Number(document.getElementById("num").value);
+
+                if (num && num > 1) {
+                    for (i = 2; i < num; i++) {
+                        if (num % i == 0) {
+                            output.innerText = `Tallet ${num} er ikke et primetall`
+                            break;
+                        } else {
+                            output.innerText = `Tallet ${num} er et primetall`
+                        }
+                    }
+                } else {
+                    output.innerText = "Ugyldig tall eller tekst"
+                }   
+            }
+        </script>
+    </body>
+</html>
