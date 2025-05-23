@@ -35,10 +35,12 @@
 
         <script>
             let output = document.getElementById("output");
-            let amount = Number(document.getElementById("amount").value);
 
 
             function writePoem() {
+                let amount = Number(document.getElementById("amount").value);
+                output.innerHTML = ""
+
                 let multi = "s"
                 let verse1 = "", verse2= "", verse3 = "";
 
