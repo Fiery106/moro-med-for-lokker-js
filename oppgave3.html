@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            sensorert tabell
+        </title>
+
+
+        <style>
+            td {
+                margin: 10px;
+                padding: 10px;
+                text-align: center;
+                border: 2px solid gray;
+            }
+        </style>
+    </head>
+
+
+
+    <body>
+        <header>
+            <h1>
+                Gangetabell men tallene i midten er sensorerte
+            </h1>
+        </header>
+
+
+        <main>
+            <button onclick="makeTable()">
+                Lag tabell
+            </button>
+        </main>
+
+
+        <footer>
+            <table id="output"></table>
+        </footer>
+
+
+        <script>
+            let output = document.getElementById("output");
+            let censor = "***";
+
+            let table_size = 11;
+
+
+            function makeTable() {
+                let text = "";
+
+                for (i = 1; i < table_size; i++) {
+                    text += "<tr>"
+                    for (j = 1; j < table_size; j++) {
+                        if (j == i) {
+                            text += writeData(censor)
+                            continue;
+                        } else {
+                            text += writeData(i * j)
+                        }
+                    }
+                    text += "</tr>"
+                }
+
+                output.innerHTML = text
+            }
+
+
+            function writeData(x) {
+                return `<td> ${x} </td>`
+            }
+        </script>
+    </body>
+</html>
