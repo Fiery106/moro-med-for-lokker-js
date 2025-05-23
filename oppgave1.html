@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            while sum
+        </title>
+    </head>
+
+
+
+    <body>
+        <header>
+            <h1>
+                orem ipsum dolor sit amet consectetur.
+            </h1>
+        </header>
+
+
+        <main>
+            <button onclick="sumUp()">
+                Regn ut
+            </button>
+        </main>
+
+
+        <footer>
+            <p id="output"></p>
+
+            <p id="output2"></p>
+        </footer>
+
+
+        <script>
+            let output = document.getElementById("output");
+            let output2 = document.getElementById("output2");
+
+
+            function sumUp() {
+                let sum = 0;
+                let i = 1;
+
+                let sum2= 0;
+                let j = 1;
+
+
+                while (sum < 1238) {
+                    sum += i;
+                    i++;
+                } output.innerText = `Tallet ${i} var siste tallet som passerte målverdien for et totalt sum av ${sum}.`
+
+
+                while (sum2 < 2250) {
+                    if (j % 2 == 0) {
+                        j++;
+                        continue;
+                    } else {
+                        sum2 += j;
+                        j++;
+                    }
+                } output2.innerText = `Tallet ${j} var siste partallet som passerte målverdien for et totalt sum av ${sum2}.`
+            }
+        </script>
+    </body>
+</html>
